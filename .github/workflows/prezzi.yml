@@ -18,6 +18,6 @@ jobs:
       - run: |
           git config user.name "comitato-bot"
           git config user.email "comitato-bot@users.noreply.github.com"
-          git add data/prezzi.json data/prezzi.csv
+          git add data/prezzi.json data/prezzi.csv data/universo.csv
           git diff --cached --quiet || git commit -m "Prezzi $(date -u +%F)"
           git push
