@@ -86,6 +86,18 @@ def main():
     for e in out["errors"]:
         lines.append("errore," + e.replace(",", ";"))
     open("data/prezzi.csv", "w").write("\n".join(lines) + "\n")
+    # universo: titoli piu' comuni gia' pronti, cosi' un acquisto nuovo ha quasi sempre il prezzo senza aggiungerlo a mano
+    uni = cfg.get("universo") or []
+    if uni:
+        ul = [f"aggiornato,{out['updatedAt']}", "simbolo,data,chiusura,precedente,var%,max52,min52,media200,valuta"]
+        for sym in uni:
+            try:
+                v = yahoo(sym)
+                ul.append(",".join(str(x) for x in [sym, v["date"], v["close"], v["prevClose"], v["changePct"], v["high52"], v["low52"], v["ma200"], v["currency"]]))
+            except Exception as e:
+                ul.append(f"{sym},errore")
+            time.sleep(0.5)
+        open("data/universo.csv", "w").write("\n".join(ul) + "\n")
     print(json.dumps({k: (v["close"], v["date"]) for k, v in out["tickers"].items()}), out.get("regime"), out["errors"])
     if not out["tickers"]:
         sys.exit(1)
