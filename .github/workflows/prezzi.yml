@@ -1,0 +1,23 @@
+name: Prezzi del comitato
+on:
+  schedule:
+    - cron: "20 20 * * 1-5"   # 22:20 ora italiana legale (21:20 solare)
+    - cron: "20 21 * * 1-5"   # 22:20 ora italiana solare (23:20 legale)
+  workflow_dispatch: {}
+permissions:
+  contents: write
+jobs:
+  prezzi:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python prezzi.py
+      - run: |
+          git config user.name "comitato-bot"
+          git config user.email "comitato-bot@users.noreply.github.com"
+          git add data/prezzi.json
+          git diff --cached --quiet || git commit -m "Prezzi $(date -u +%F)"
+          git push
