@@ -75,6 +75,17 @@ def main():
                          "drawdownPct": dd, "ma200": b["ma200"], "cashRange": {"rialzo": "2-8%", "correzione": "5-20%", "ribasso": "10-30%"}[regime]}
     os.makedirs("data", exist_ok=True)
     json.dump(out, open("data/prezzi.json", "w"), ensure_ascii=False, indent=1)
+    fx = out.get("fx") or {}
+    lines = [f"aggiornato,{out['updatedAt']}", f"cambi_bce,{fx.get('date')},USD={fx.get('USD')},DKK={fx.get('DKK')},CHF={fx.get('CHF')},GBP={fx.get('GBP')}"]
+    r = out.get("regime")
+    if r:
+        lines.append(f"fase,{r['regime']},EUNL={r['eunlClose']},max52={r['high52']},min52={r['low52']},dal_massimo%={r['drawdownPct']},media200={r['ma200']},liquidita={r['cashRange']}")
+    lines.append("titolo,data,chiusura,precedente,var%,max52,min52,media50,media200,valuta")
+    for k, v in out["tickers"].items():
+        lines.append(",".join(str(x) for x in [k, v["date"], v["close"], v["prevClose"], v["changePct"], v["high52"], v["low52"], v["ma50"], v["ma200"], v["currency"]]))
+    for e in out["errors"]:
+        lines.append("errore," + e.replace(",", ";"))
+    open("data/prezzi.csv", "w").write("\n".join(lines) + "\n")
     print(json.dumps({k: (v["close"], v["date"]) for k, v in out["tickers"].items()}), out.get("regime"), out["errors"])
     if not out["tickers"]:
         sys.exit(1)
