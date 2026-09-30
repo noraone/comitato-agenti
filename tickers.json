@@ -1,0 +1,14 @@
+{
+  "benchmark": "EUNL.DE",
+  "tickers": {
+    "NVDA": "NVDA",
+    "ISP": "ISP.MI",
+    "LLY": "LLY",
+    "JPM": "JPM",
+    "MSFT": "MSFT",
+    "TTE": "TTE.PA",
+    "ASML": "ASML.AS",
+    "NOVO-B": "NOVO-B.CO",
+    "EUNL": "EUNL.DE"
+  }
+}
