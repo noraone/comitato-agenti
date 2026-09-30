@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-09-30T12:36:21+00:00",
+ "updatedAt": "2026-09-30T12:59:11+00:00",
  "source": "Yahoo Finance (chart API), cambi BCE",
  "tickers": {
   "NVDA": {
@@ -44,14 +44,14 @@
    "currency": "EUR",
    "exchange": "MIL",
    "date": "2026-09-30",
-   "close": 6.702,
+   "close": 6.718,
    "prevClose": 6.753,
-   "changePct": -0.755,
+   "changePct": -0.518,
    "high52": 6.917,
    "low52": 4.966,
-   "fromHighPct": -3.108,
-   "ma50": 6.7267,
-   "ma200": 6.0157,
+   "fromHighPct": -2.877,
+   "ma50": 6.727,
+   "ma200": 6.0158,
    "days": 254,
    "last5": [
     [
@@ -72,7 +72,7 @@
     ],
     [
      "2026-09-30",
-     6.702
+     6.718
     ]
    ]
   },
@@ -192,14 +192,14 @@
    "currency": "EUR",
    "exchange": "PAR",
    "date": "2026-09-30",
-   "close": 76.11,
+   "close": 76.16,
    "prevClose": 78.1,
-   "changePct": -2.548,
+   "changePct": -2.484,
    "high52": 81.05,
    "low52": 49.845,
-   "fromHighPct": -6.095,
-   "ma50": 76.9724,
-   "ma200": 71.4182,
+   "fromHighPct": -6.033,
+   "ma50": 76.9734,
+   "ma200": 71.4185,
    "days": 256,
    "last5": [
     [
@@ -220,7 +220,7 @@
     ],
     [
      "2026-09-30",
-     76.11
+     76.16
     ]
    ]
   },
@@ -229,14 +229,14 @@
    "currency": "EUR",
    "exchange": "AMS",
    "date": "2026-09-30",
-   "close": 1603.0,
+   "close": 1610.0,
    "prevClose": 1601.2,
-   "changePct": 0.112,
+   "changePct": 0.55,
    "high52": 1721.4,
    "low52": 813.9,
-   "fromHighPct": -6.878,
-   "ma50": 1490.272,
-   "ma200": 1334.667,
+   "fromHighPct": -6.471,
+   "ma50": 1490.412,
+   "ma200": 1334.702,
    "days": 256,
    "last5": [
     [
@@ -257,7 +257,7 @@
     ],
     [
      "2026-09-30",
-     1603.0
+     1610.0
     ]
    ]
   },
@@ -266,14 +266,14 @@
    "currency": "DKK",
    "exchange": "CPH",
    "date": "2026-09-30",
-   "close": 250.0,
+   "close": 250.05,
    "prevClose": 251.65,
-   "changePct": -0.656,
+   "changePct": -0.636,
    "high52": 401.35,
    "low52": 228.5,
-   "fromHighPct": -37.71,
-   "ma50": 292.533,
-   "ma200": 296.0945,
+   "fromHighPct": -37.698,
+   "ma50": 292.534,
+   "ma200": 296.0947,
    "days": 249,
    "last5": [
     [
@@ -294,7 +294,7 @@
     ],
     [
      "2026-09-30",
-     250.0
+     250.05
     ]
    ]
   },
@@ -303,14 +303,14 @@
    "currency": "EUR",
    "exchange": "GER",
    "date": "2026-09-30",
-   "close": 128.715,
+   "close": 129.01,
    "prevClose": 128.56,
-   "changePct": 0.121,
+   "changePct": 0.35,
    "high52": 129.395,
    "low52": 107.195,
-   "fromHighPct": -0.526,
-   "ma50": 127.0946,
-   "ma200": 119.2759,
+   "fromHighPct": -0.298,
+   "ma50": 127.1005,
+   "ma200": 119.2774,
    "days": 251,
    "last5": [
     [
@@ -331,7 +331,7 @@
     ],
     [
      "2026-09-30",
-     128.715
+     129.01
     ]
    ]
   }
@@ -347,12 +347,12 @@
  },
  "regime": {
   "regime": "rialzo",
-  "eunlClose": 128.715,
+  "eunlClose": 129.01,
   "date": "2026-09-30",
   "high52": 129.395,
   "low52": 107.195,
-  "drawdownPct": -0.526,
-  "ma200": 119.2759,
+  "drawdownPct": -0.298,
+  "ma200": 119.2774,
   "cashRange": "2-8%"
  }
 }
